@@ -33,6 +33,8 @@ RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.1
       -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
+RUN chown -R 185: /opt/
+RUN chmod u+x /opt/entrypoint.sh
 
 WORKDIR /opt/spark/work-dir
 RUN chmod g+w /opt/spark/work-dir
