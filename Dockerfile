@@ -27,8 +27,8 @@ RUN set -ex && \
 RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://apache.uib.no/spark/spark-${spark_version}/spark-${spark_release}.tgz \
   | tar xzv -C $SPARK_HOME --strip-components=1
 
-RUN wget -O- https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz
- | tar xzv -C $HADOOP_HOME
+RUN wget -O- https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz \
+  | tar xzv -C $HADOOP_HOME
 
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
       -P $SPARK_HOME/jars
