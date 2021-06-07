@@ -1,8 +1,8 @@
 ARG java_image_tag=11-jre-slim
 FROM openjdk:${java_image_tag}
 
-ARG spark_version=3.1.1
-ARG spark_release=3.1.1-bin-hadoop3.2
+ARG spark_version=3.1.2
+ARG spark_release=3.1.2-bin-hadoop3.2
 #ARG spark_version=3.0.1-bin-without-hadoop
 ARG hadoop_version=3.2.2
 ARG spark_uid=185
