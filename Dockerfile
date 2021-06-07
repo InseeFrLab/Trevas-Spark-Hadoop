@@ -2,13 +2,16 @@ ARG java_image_tag=11-jre-slim
 FROM openjdk:${java_image_tag}
 
 ARG spark_version=3.1.2
-ARG spark_release=3.1.2-bin-hadoop3.2
-#ARG spark_version=3.0.1-bin-without-hadoop
+# ARG spark_release=3.1.2-bin-hadoop3.2
+ARG spark_version=3.1.2-bin-without-hadoop
 ARG hadoop_version=3.2.2
 ARG spark_uid=185
 
-#ENV HADOOP_HOME="/opt/hadoop"
+ENV HADOOP_HOME="/opt/hadoop"
 ENV SPARK_HOME="/opt/spark"
+ENV PATH=$PATH:$SPARK_HOME/bin
+ENV PATH=$PATH:$HADOOP_HOME/bin
+ENV LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
 
 RUN set -ex && \
     sed -i 's/http:\/\/deb.\(.*\)/https:\/\/deb.\1/g' /etc/apt/sources.list && \
@@ -24,8 +27,8 @@ RUN set -ex && \
 RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://apache.uib.no/spark/spark-${spark_version}/spark-${spark_release}.tgz \
   | tar xzv -C $SPARK_HOME --strip-components=1
 
-# RUN wget -O- https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz
-#  | tar xzv -C /opt
+RUN wget -O- https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz
+ | tar xzv -C $HADOOP_HOME
 
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
       -P $SPARK_HOME/jars
