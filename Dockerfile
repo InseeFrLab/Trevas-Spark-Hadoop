@@ -3,7 +3,7 @@ FROM openjdk:${java_image_tag}
 
 ARG spark_version=3.1.2
 # ARG spark_release=3.1.2-bin-hadoop3.2
-ARG spark_version=3.1.2-bin-without-hadoop
+ARG spark_release=3.1.2-bin-without-hadoop
 ARG hadoop_version=3.2.2
 ARG spark_uid=185
 
