@@ -1,10 +1,10 @@
 ARG java_image_tag=11-jre-slim
 FROM openjdk:${java_image_tag}
 
-ARG spark_version=3.1.2
-# ARG spark_release=3.1.2-bin-hadoop3.2
-ARG spark_release=3.1.2-bin-without-hadoop
-ARG hadoop_version=3.2.2
+ARG spark_version=3.2.1
+ARG spark_release=3.2.1-bin-without-hadoop
+ARG hadoop_version=3.3.1
+ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
 
 ENV HADOOP_HOME="/opt/hadoop"
@@ -32,7 +32,7 @@ RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://apache.uib.no/hadoop/common/
 
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.375/aws-java-sdk-bundle-1.11.375.jar \
+RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${aws_java_sdk}/aws-java-sdk-bundle-${aws_java_sdk}.jar \
       -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
