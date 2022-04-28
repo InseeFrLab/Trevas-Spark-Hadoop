@@ -6,6 +6,8 @@ ARG spark_release=3.2.1-bin-without-hadoop
 ARG hadoop_version=3.3.1
 ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
+ARG trevas_version=0.4.0
+ARG postgresql_version=42.3.3
 
 ENV HADOOP_HOME="/opt/hadoop"
 ENV SPARK_HOME="/opt/spark"
@@ -33,6 +35,16 @@ RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://apache.uib.no/hadoop/common/
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${aws_java_sdk}/aws-java-sdk-bundle-${aws_java_sdk}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/{trevas_version}/vtl-engine-{trevas_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-model/{trevas_version}/vtl-model-{trevas_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-parser/{trevas_version}/vtl-parser-{trevas_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-spark/{trevas_version}/vtl-spark-{trevas_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/{postgresql_version}/postgresql-{postgresql_version}.jar \
       -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
