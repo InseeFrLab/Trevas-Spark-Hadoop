@@ -8,6 +8,7 @@ ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
 ARG trevas_version=0.4.1
 ARG postgresql_version=42.3.3
+ARG postgis_version=2021.1.0
 
 ENV HADOOP_HOME="/opt/hadoop"
 ENV SPARK_HOME="/opt/spark"
@@ -26,10 +27,10 @@ RUN set -ex && \
     chgrp root /etc/passwd && chmod ug+rw /etc/passwd && \
     rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
-RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://apache.uib.no/spark/spark-${spark_version}/spark-${spark_release}.tgz \
+RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://archive.apache.org/dist/spark/spark-${spark_version}/spark-${spark_version}-bin-without-hadoop.tgz \
   | tar xzv -C $SPARK_HOME --strip-components=1
 
-RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz \
+RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://archive.apache.org/dist/hadoop/core/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz \
   | tar xzv -C $HADOOP_HOME --strip-components=1
 
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
@@ -37,6 +38,8 @@ RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${aws_java_sdk}/aws-java-sdk-bundle-${aws_java_sdk}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/${postgresql_version}/postgresql-${postgresql_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version}.jar \
       -P $SPARK_HOME/jars
