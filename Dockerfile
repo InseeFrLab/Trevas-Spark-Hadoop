@@ -39,7 +39,7 @@ RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${a
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/${postgresql_version}/postgresql-${postgresql_version}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
+RUN wget -q https://repo1.maven.org/maven2/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version}.jar \
       -P $SPARK_HOME/jars
