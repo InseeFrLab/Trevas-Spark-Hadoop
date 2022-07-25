@@ -8,6 +8,7 @@ ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
 ARG trevas_version=0.4.1
 ARG postgresql_version=42.3.3
+ARG postgis_version=2021.1.0
 
 ENV HADOOP_HOME="/opt/hadoop"
 ENV SPARK_HOME="/opt/spark"
@@ -37,6 +38,8 @@ RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${aws_java_sdk}/aws-java-sdk-bundle-${aws_java_sdk}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/${postgresql_version}/postgresql-${postgresql_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version}.jar \
       -P $SPARK_HOME/jars
