@@ -27,10 +27,10 @@ RUN set -ex && \
     chgrp root /etc/passwd && chmod ug+rw /etc/passwd && \
     rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
-RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://apache.uib.no/spark/spark-${spark_version}/spark-${spark_release}.tgz \
+RUN mkdir -p $SPARK_HOME && wget -q -O- -i https://archive.apache.org/dist/spark/spark-${spark_version}/spark-${spark_version}-bin-without-hadoop.tgz \
   | tar xzv -C $SPARK_HOME --strip-components=1
 
-RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://apache.uib.no/hadoop/common/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz \
+RUN mkdir -p $HADOOP_HOME && wget -q -O- -i https://archive.apache.org/dist/hadoop/core/hadoop-${hadoop_version}/hadoop-${hadoop_version}.tar.gz \
   | tar xzv -C $HADOOP_HOME --strip-components=1
 
 RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop_version}/hadoop-aws-${hadoop_version}.jar \
