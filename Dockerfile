@@ -6,7 +6,7 @@ ARG spark_release=3.2.1-bin-without-hadoop
 ARG hadoop_version=3.3.1
 ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
-ARG trevas_version=0.4.3
+ARG trevas_version=0.4.4
 ARG postgresql_version=42.3.3
 ARG postgis_version=2021.1.0
 
