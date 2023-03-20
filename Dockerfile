@@ -1,12 +1,13 @@
 ARG java_image_tag=11-jre-slim
 FROM openjdk:${java_image_tag}
 
-ARG spark_version=3.2.1
-ARG spark_release=3.2.1-bin-without-hadoop
+ARG spark_version=3.3.1
+ARG spark_release=3.3.1-bin-without-hadoop
 ARG hadoop_version=3.3.1
 ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
-ARG trevas_version=0.4.8
+ARG trevas_version=0.5.0-SNAPSHOT
+ARG trevas_version_GH_packages=0.5.0-20230320.071645-14
 ARG postgresql_version=42.3.3
 ARG postgis_version=2021.1.0
 
@@ -41,13 +42,25 @@ RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/${postgresq
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version}.jar \
+
+# Trevas on Maven
+# RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version}.jar \
+#       -P $SPARK_HOME/jars
+# RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-model/${trevas_version}/vtl-model-${trevas_version}.jar \
+#       -P $SPARK_HOME/jars
+# RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-parser/${trevas_version}/vtl-parser-${trevas_version}.jar \
+#       -P $SPARK_HOME/jars
+# RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-spark/${trevas_version}/vtl-spark-${trevas_version}.jar \
+#       -P $SPARK_HOME/jars
+
+# Trevas on GH packages
+RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version_GH_packages}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-model/${trevas_version}/vtl-model-${trevas_version}.jar \
+RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-model/${trevas_version}/vtl-model-${trevas_version_GH_packages}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-parser/${trevas_version}/vtl-parser-${trevas_version}.jar \
+RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-parser/${trevas_version}/vtl-parser-${trevas_version_GH_packages}.jar \
       -P $SPARK_HOME/jars
-RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-spark/${trevas_version}/vtl-spark-${trevas_version}.jar \
+RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-spark/${trevas_version}/vtl-spark-${trevas_version_GH_packages}.jar \
       -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
