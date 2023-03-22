@@ -7,7 +7,7 @@ ARG hadoop_version=3.3.1
 ARG aws_java_sdk=1.11.901
 ARG spark_uid=185
 ARG trevas_version=0.5.0-SNAPSHOT
-ARG trevas_version_GH_packages=0.5.0-20230320.071645-14
+ARG trevas_version_GH_packages=0.5.0-20230322.085022-17
 ARG postgresql_version=42.3.3
 ARG postgis_version=2021.1.0
 
