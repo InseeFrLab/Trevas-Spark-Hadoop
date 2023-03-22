@@ -54,7 +54,7 @@ RUN wget -q https://repo1.maven.org/maven2/net/postgis/postgis-jdbc/${postgis_ve
 #       -P $SPARK_HOME/jars
 
 # Trevas on GH packages
-RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-engine/${trevas_version}/vtl-engine-${trevas_version_GH_packages}.jar \
+RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-engine/0.5.0-SNAPSHOT/vtl-engine-0.5.0-20230322.085022-15.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://maven.pkg.github.com/InseeFr/Trevas/fr/insee/trevas/vtl-model/${trevas_version}/vtl-model-${trevas_version_GH_packages}.jar \
       -P $SPARK_HOME/jars
