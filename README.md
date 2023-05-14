@@ -2,7 +2,7 @@
 
 ## Docker images
 
-- [Trevas 1.0.0 - Spark 3.3.1 - Hadoop 3.3.4 - PostgreSQL 42.6.0 - Postgis 2021.1.0](TODO)
+- [Trevas 1.0.0 - Spark 3.3.1 - Hadoop 3.3.4 - PostgreSQL 42.6.0 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-1.0.0-spark-3.3.1-hadoop-3.3.4-postgresql-42.6.0-postgis-2021.1.0/images/sha256-3c85b76bb945ae7f5df01370e0260971706d9991029bc874eb8bdeadeea09740?context=explore)
 
 - [Trevas 0.4.8 - Spark 3.2.1 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.8-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-5ea1e3222640f97aaaf0347d6fe307f0c692f06e74be3f7c6e1488f40724ba0f?context=explore)
 
