@@ -4,7 +4,7 @@ FROM openjdk:${java_image_tag}
 ARG spark_version=3.3.1
 ARG spark_release=3.3.1-bin-without-hadoop
 ARG hadoop_version=3.3.4
-ARG aws_java_sdk=1.11.901
+ARG aws_java_sdk=1.12.397
 ARG spark_uid=185
 ARG trevas_version=1.0.0
 ARG postgresql_version=42.6.0
