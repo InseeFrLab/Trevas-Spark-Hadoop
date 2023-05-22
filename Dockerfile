@@ -9,6 +9,7 @@ ARG spark_uid=185
 ARG trevas_version=1.0.0
 ARG postgresql_version=42.6.0
 ARG postgis_version=2021.1.0
+ARG parso_version=2.0.11
 
 ENV HADOOP_HOME="/opt/hadoop"
 ENV SPARK_HOME="/opt/spark"
@@ -50,6 +51,8 @@ RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-parser/${trevas_v
 RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-spark/${trevas_version}/vtl-spark-${trevas_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repos.spark-packages.org/saurfang/spark-sas7bdat/3.0.0-s_2.12/spark-sas7bdat-3.0.0-s_2.12.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/com/epam/parso/${parso_version}/parso-${parso_version}.jar \
       -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
