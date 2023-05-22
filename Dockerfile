@@ -49,6 +49,8 @@ RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-parser/${trevas_v
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/fr/insee/trevas/vtl-spark/${trevas_version}/vtl-spark-${trevas_version}.jar \
       -P $SPARK_HOME/jars
+RUN wget -q https://repos.spark-packages.org/saurfang/spark-sas7bdat/3.0.0-s_2.12/spark-sas7bdat-3.0.0-s_2.12.jar \
+      -P $SPARK_HOME/jars
 
 COPY entrypoint.sh /opt/
 RUN chown -R ${spark_uid} /opt/
