@@ -2,24 +2,4 @@
 
 ## Docker images
 
-- [Trevas 1.0.1 - Spark 3.3.1 - Hadoop 3.3.4 - PostgreSQL 42.6.0 - Postgis 2021.1.0](TODO)
-
-- [Trevas 1.0.0 - Spark 3.3.1 - Hadoop 3.3.4 - PostgreSQL 42.6.0 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-1.0.0-spark-3.3.1-hadoop-3.3.4-postgresql-42.6.0-postgis-2021.1.0/images/sha256-e60b4905839c138f67b4206dacd8f9f0d3e5a16e79905ffae3ef4fb6f24c01a8?context=explore)
-
-- [Trevas 0.4.8 - Spark 3.2.1 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.8-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-5ea1e3222640f97aaaf0347d6fe307f0c692f06e74be3f7c6e1488f40724ba0f?context=explore)
-
-- [Trevas 0.4.7 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.7-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-91e416415adc4456d6a82405976fea5576068fe84705ebb3286a59ac1a87da20?context=explore)
-
-- [Trevas 0.4.6 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.6-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-74feb47680cb70ea998faaa2c7ef22b5cab4a22c195e1b2eb52fe62eaf04c481?context=explore)
-
-- [Trevas 0.4.5 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.5-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-45de3380a97b564cc69ad9ce4900449f4333546175529a67b14148090ac1edd1?context=explore)
-
-- [Trevas 0.4.4 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.4-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-f1f01bc92d201a5a53f89027a713c0b4c3115fd768820f15b6208105b6d08490?context=explore)
-
-- [Trevas 0.4.3 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/inseefrlab/spark-hadoop/trevas-0.4.3-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-ebe23da3fd8040cf8c5610cbfaf6af47a54bcec2882979ad6aea8917e8c1eead?context=explore)
-
-- [Trevas 0.4.2 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/spark-hadoop/inseefrlab/spark-hadoop/trevas-0.4.2-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-a6a65a859c125f857ae5dcfcaf178d5890dc6c5f36a7501277d050c8d2d4c64a?context=repo)
-
-- [Trevas 0.4.1 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3 - Postgis 2021.1.0](https://hub.docker.com/layers/spark-hadoop/inseefrlab/spark-hadoop/trevas-0.4.1-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3-postgis-2021.1.0/images/sha256-2c620a750fae26d9e0b3ef6da6b5886379c4b1232f60872293f6df134b3f9314?context=explore)
-
-- [Trevas 0.4.1 - Spark 3.1.2 - Hadoop 3.3.1 - PostgreSQL 42.3.3](https://hub.docker.com/layers/238107404/inseefrlab/spark-hadoop/trevas-0.4.1-spark-3.2.1-hadoop-3.3.1-postgresql-42.3.3/images/sha256-b67bf0c29d7388ae36f062fb015a4e04c3a8189b386e37e069081ee9475a55ec?context=repo)
+See the [tag](https://hub.docker.com/r/inseefrlab/spark-hadoop/tags) list on Docker Hub
