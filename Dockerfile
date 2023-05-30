@@ -8,6 +8,7 @@ ARG aws_java_sdk=1.12.397
 ARG spark_uid=185
 ARG trevas_version=1.0.1
 ARG postgresql_version=42.6.0
+ARG mariadb_version=3.1.4
 ARG postgis_version=2021.1.0
 ARG parso_version=2.0.11
 
@@ -39,6 +40,8 @@ RUN wget -q https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/${hadoop
 RUN wget -q https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/${aws_java_sdk}/aws-java-sdk-bundle-${aws_java_sdk}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/${postgresql_version}/postgresql-${postgresql_version}.jar \
+      -P $SPARK_HOME/jars
+RUN wget -q https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/${mariadb_version}/mariadb-java-client-${mariadb_version}.jar \
       -P $SPARK_HOME/jars
 RUN wget -q https://repo1.maven.org/maven2/net/postgis/postgis-jdbc/${postgis_version}/postgis-jdbc-${postgis_version}.jar \
       -P $SPARK_HOME/jars
