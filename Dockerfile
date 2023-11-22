@@ -1,12 +1,12 @@
 ARG java_image_tag=11-jre-slim
 FROM openjdk:${java_image_tag}
 
-ARG spark_version=3.3.1
-ARG spark_release=3.3.1-bin-without-hadoop
+ARG spark_version=3.5.0
+ARG spark_release=3.5.0-bin-without-hadoop
 ARG hadoop_version=3.3.4
 ARG aws_java_sdk=1.12.397
 ARG spark_uid=185
-ARG trevas_version=1.1.1
+ARG trevas_version=1.2.0
 ARG postgresql_version=42.6.0
 ARG mysql_version=8.0.30
 ARG postgis_version=2021.1.0
