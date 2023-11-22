@@ -1,4 +1,4 @@
-ARG java_image_tag=11-jre-slim
+ARG java_image_tag=11.0.16-jre-slim
 FROM openjdk:${java_image_tag}
 
 ARG spark_version=3.3.1
