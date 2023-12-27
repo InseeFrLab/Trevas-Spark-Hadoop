@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17.0.2-jdk-slim
 
 ARG spark_version=3.5.0
 ARG spark_release=3.5.0-bin-without-hadoop
