@@ -1,14 +1,9 @@
 name: Dockerize
 
 on:
-  #schedule:
-  #- cron: "0 10 * * *" # everyday at 10am
   push:
-    branches:
-      - "**"
     tags:
-      - "*"
-  pull_request:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   docker:
@@ -30,14 +25,21 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Extract version
+        id: extract_tag
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG_NAME#v}"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
       - name: Build and push
-        uses: docker/build-push-action@v6.5.0
+        uses: docker/build-push-action@v6.18.0
+        id: docker_build
         with:
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ steps.docker_meta.outputs.tags }}
+            inseefrlab/spark-hadoop:${{ steps.extract_tag.outputs.VERSION }}
             ${{ github.ref == 'refs/heads/master' && 'inseefrlab/spark-hadoop:latest' || '' }}
           labels: ${{ steps.docker_meta.outputs.labels }}
       - name: Image digest
