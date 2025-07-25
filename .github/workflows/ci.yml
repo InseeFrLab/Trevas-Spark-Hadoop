@@ -46,7 +46,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             inseefrlab/spark-hadoop:${{ steps.extract_tag.outputs.VERSION }}
-            ${{ github.ref == 'refs/heads/master' && 'inseefrlab/spark-hadoop:latest' || '' }}
+            inseefrlab/spark-hadoop:latest
           labels: ${{ steps.docker_meta.outputs.labels }}
           
       - name: Image digest
